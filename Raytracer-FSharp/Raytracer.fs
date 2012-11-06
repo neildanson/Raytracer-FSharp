@@ -10,7 +10,7 @@ type Raytracer(width, height, scene:Scene) =
     
     let fwidth = float width * inverseAspectRatio
     let (halfHeight, halfWidth) = (float height / 2.0, float fwidth / 2.0)
-    let (invDoubleHeight, invDoubleWidth) = (1.0 / float height * 2.0, 1.0 / float fwidth * 2.0)
+    let (invDoubleHeight, invDoubleWidth) = (1.0 / (float height * 2.0), 1.0 / (float fwidth * 2.0))
 
     let intersections ray = 
         List.fold (fun currentMin (head:SceneObject) ->
